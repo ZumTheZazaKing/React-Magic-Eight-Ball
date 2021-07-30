@@ -4,11 +4,34 @@ import './style.css';
 import reportWebVitals from './reportWebVitals';
 
 
+
+function Input(){
+
+  return <div>
+    <form>
+    <input type="text" placeholder="Ask me a question"/>
+    <input type="submit" value="Submit"/>
+    </form>
+  </div>
+
+}
+
+function Output(){
+
+  return <div>
+    <p>Sample Text</p>
+  </div>
+
+}
+
+
+
 function App(){
 
   return <div>
 
-    <h1>Hello</h1>
+    <Input/>
+    <Output/>
 
   </div>
 
