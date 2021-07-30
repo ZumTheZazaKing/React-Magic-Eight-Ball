@@ -1,3 +1,81 @@
 body{
     background-color: burlywood;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .container{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+
+        #input{
+
+            input[type=text]{
+                padding: 10px;
+                font-size: 16px;
+                border: none;
+                outline: none;
+            }
+
+            input[type=submit]{
+                font-size: 16px;
+                padding: 10px;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                background-color: rgb(230, 230, 230);
+            }
+
+            input[type=submit]:hover{
+                background-color: rgb(211, 211, 211);
+            }
+
+        }
+
+
+
+
+
+        @keyframes shake{
+            0%{transform: translateX(0);}
+            25%{transform: translateX(-50px);}
+            50%{transform: translateX(50px);}
+            75%{transform: translateX(-25px);}
+            100%{transform: translateX(0);}
+        }
+
+        .shaken{
+            animation: shake .5s linear 1;
+        }
+
+        #output{
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border: 60px solid black;
+            
+
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                word-wrap: break-word;
+            }
+
+        }
+
+    }
+
 }
+

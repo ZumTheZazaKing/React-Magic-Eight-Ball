@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './style.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 function Input(props){
 
-  return <div>
+  return <div id="input">
     <form onSubmit={props.handleSubmit}>
     <input required onChange={props.handleChange} type="text" 
     placeholder="Ask me a question" value={props.question}/>
@@ -20,7 +20,7 @@ function Input(props){
 
 function Output(props){
 
-  return <div>
+  return <div id="output" ref={props.ballClass}>
     <p>{props.data}</p>
   </div>
 
@@ -40,11 +40,18 @@ function App(){
   ];
 
   let [question, setQuestion] = useState("");
-  let [response, setResponse] = useState("");
+  let [response, setResponse] = useState("8");
+
+  let ballClass = useRef("");
 
   const questionChange = e => setQuestion(e.target.value);
   const handleSubmit = e => {
     e.preventDefault();
+
+    ballClass.current.className = "shaken";
+    setTimeout(() => {ballClass.current.className = ""}, 500);
+
+    setQuestion("");
 
     if(question.toLowerCase().search(/(who|where|what|when|why|how)/g) !== -1){
       return alert("The Question has to be Yes or No");
@@ -73,10 +80,11 @@ function App(){
   };
 
 
-  return <div>
+  return <div className="container">
 
     <Input handleSubmit={handleSubmit} question={question} handleChange={questionChange}/>
-    <Output data={response}/>
+    <br/>
+    <Output data={response} ballClass={ballClass}/>
 
   </div>
 

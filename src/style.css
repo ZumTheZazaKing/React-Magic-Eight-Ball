@@ -1,5 +1,71 @@
 body {
   background-color: burlywood;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .container #input input[type=text] {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+body .container #input input[type=submit] {
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #e6e6e6;
+}
+body .container #input input[type=submit]:hover {
+  background-color: lightgray;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  75% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+body .container .shaken {
+  animation: shake 0.5s linear 1;
+}
+body .container #output {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 60px solid black;
+}
+body .container #output p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  word-wrap: break-word;
 }
 
 /*# sourceMappingURL=style.css.map */
