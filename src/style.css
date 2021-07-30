@@ -7,6 +7,30 @@ body {
   align-items: center;
   height: 100vh;
 }
+body .credit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body .credit img {
+  content: url(./logo.svg);
+  animation: rotate 10s linear infinite;
+}
+body .credit p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
 body .container {
   text-align: center;
   display: flex;
@@ -66,6 +90,12 @@ body .container #output p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   word-wrap: break-word;
+}
+body .footer {
+  position: absolute;
+  bottom: 5px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
